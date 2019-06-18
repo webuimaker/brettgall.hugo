@@ -12,11 +12,13 @@
   {{ block "main" . }}{{ end }}
 
   {{ partial "site_js.html" . }}
-
+{{ if eq .Site.Params.Footer "true" }}
   {{ if ne .Type "docs" }}
+  
   <div class="container">
     {{ partial "site_footer.html" . }}
   </div>
+  {{ end }}
   {{ end }}
 
   {{ partial "citation.html" . }}
